@@ -15,17 +15,15 @@ CC = gcc
 INCLUDES_DIR = includes
 CFLAGS = -Wall -Wextra -g3 -Wuninitialized -fsanitize=address
 export CFLAGS
-CFLAGS++ = -ltermcap
 IFLAGS = -I$(INCLUDES_DIR)
-INCLUDES = sh21.h ft_printf.h libft.h
+INCLUDES = lem_in.h ft_printf.h libft.h
 VPATH = ./obj\
 		:./srcs\
 		:./srcs/main\
-		:./srcs/input\
+		:./srcs/parser\
 		:./includes\
 
-SRCS = sh21.c set_terminal.c get_data.c arrow_right.c print_char.c my_putchar.c\
-setdebug.c
+SRCS = lem_in.c parser.c
 LIB = ./libft/libft.a
 LIB_DIR = ./libft
 OBJS = $(SRCS:.c=.o)
@@ -42,15 +40,15 @@ library:
 
 $(NAME): $(OBJS) $(LIB) $(INCLUDES) $(MAKEFILE)
 	@$(CC) $(CFLAGS) $(CFLAGS++) $(IFLAGS) $(OBJS_WITH_PATH) $(LIB) -o $@
-	@printf "\n[21SH] \033[1;32m===%s completed===\033[0m\n" "$(NAME)"
+	@printf "\n[LEM_IN] \033[1;32m===%s completed===\033[0m\n" "$(NAME)"
 	./21sh
 
 %.o: %.c $(INCLUDES) $(MAKEFILE)
-	@printf "\r[21SH] \033[1;33mBuilding %s\033[0m" "$(NAME)"
-	@$(CC) -o $(OBJS_PATH)/$@ -c $(CFLAGS) $(CFLAGS++) $(IFLAGS) $<
+	@printf "\r[LEM_IN] \033[1;33mBuilding %s\033[0m" "$(NAME)"
+	@$(CC) -o $(OBJS_PATH)/$@ -c $(CFLAGS) $(IFLAGS) $<
 
 clean:
-	@printf "[21SH] \033[1;31mDeleting %s objects\033[0m\n" "$(NAME)"
+	@printf "[LEM_IN] \033[1;31mDeleting %s objects\033[0m\n" "$(NAME)"
 	@rm -f $(OBJS_WITH_PATH)
 	@make -C ./libft clean
 
