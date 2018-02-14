@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 21sh
+NAME = lem-in
 CC = gcc
 INCLUDES_DIR = includes
 CFLAGS = -Wall -Wextra -g3 -Wuninitialized -fsanitize=address
@@ -23,7 +23,7 @@ VPATH = ./obj\
 		:./srcs/parser\
 		:./includes\
 
-SRCS = lem_in.c parser.c
+SRCS = lem_in.c parser.c atoi_beta.c
 LIB = ./libft/libft.a
 LIB_DIR = ./libft
 OBJS = $(SRCS:.c=.o)
