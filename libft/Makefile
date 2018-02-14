@@ -41,7 +41,7 @@ SRCS_LIBFT = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_strcapitalize.c ft_lstsize.c ft_strindex.c ft_strcdup.c ft_binsearch.c \
 	ft_lstadd_back.c ft_strnindex.c ft_strlcpy.c ft_sortstrings.c get_next_line.c\
 	ft_strsplitwhitespace.c size_list.c last_elem.c str_alnum.c ft_strndup.c\
-	ft_strjoin_multiple.c del_arr.c del_str.c
+	ft_strjoin_multiple.c del_arr.c del_str.c arrlen.c
 
 SRCS_PRINTF = ft_printf.c ft_dprintf.c ft_print.c \
 	ft_modifiers.c ft_flags.c ft_buffmgmt.c ft_box_initializer.c ptr_s.c ptr_smaj.c\
